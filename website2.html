@@ -314,7 +314,7 @@
             height: 180px;
             object-fit: cover;
             border-radius: 50%;
-            border: 8px solid #ffffff; /* Red border to match your screenshot */
+            border: 8px solid #ffffff;
             box-shadow: 0 8px 40px #d2691e22;
             background: #fff;
         }
@@ -403,6 +403,7 @@
             font-size: 2.2rem;
             margin: 0 auto 2rem;
             box-shadow: 0 4px 18px rgba(255,215,0,0.22);
+            color: white;
         }
 
         .program-card h3 {
@@ -477,6 +478,83 @@
 
         .premium-cta {
             background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+        }
+
+        /* Program details section */
+        .program-details {
+            display: none;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .program-details.active {
+            display: block;
+        }
+
+        .program-details h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .detail-section {
+            padding: 1.5rem;
+            background: #f8f6f3;
+            border-radius: 12px;
+        }
+
+        .detail-section h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-section li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .close-details {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 0.8rem 2rem;
+            background: #e5e5e5;
+            color: var(--text-dark);
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .close-details:hover {
+            background: #d0d0d0;
+            transform: translateY(-2px);
         }
 
         /* Testimonials section */
@@ -944,22 +1022,22 @@
                 <div class="about-main-text">
                     <h2 class="section-title orange">Meet Channi</h2>
                     <p>
-                        Hi, I’m Channy Mitchell, a <strong>Barkindji woman</strong> who expresses my culture through art.
+                        Hi, I'm Channy Mitchell, a <strong>Barkindji woman</strong> who expresses my culture through art.
                     </p>
                     <p>
-                        Moving to Adelaide was a big change. I left behind my family and everything familiar, feeling alone and scared at first. But becoming part of the Eagles football club changed everything. The support, friendship, and sense of belonging I’ve found here have made it feel like home. I love playing footy and sharing my passion with such a special team – I’m forever grateful.
+                        Moving to Adelaide was a big change. I left behind my family and everything familiar, feeling alone and scared at first. But becoming part of the Eagles football club changed everything. The support, friendship, and sense of belonging I've found here have made it feel like home. I love playing footy and sharing my passion with such a special team – I'm forever grateful.
                     </p>
                     <p>
-                        My journey in art and sport is deeply personal. I dedicate both to my pop – my hero. He always believed in me, and his encouragement is what pushed me to start my art business. Even though he’s no longer with us, I carry him with me on the field and in every piece I create. He stood by me and my siblings when no one else did, and his spirit continues to guide me.
+                        My journey in art and sport is deeply personal. I dedicate both to my pop – my hero. He always believed in me, and his encouragement is what pushed me to start my art business. Even though he's no longer with us, I carry him with me on the field and in every piece I create. He stood by me and my siblings when no one else did, and his spirit continues to guide me.
                     </p>
                     <p>
-                        Through sharing my art I am able to keep my pop’s legacy and educate the future generation about Aboriginal culture.
+                        Through sharing my art I am able to keep my pop's legacy and educate the future generation about Aboriginal culture.
                     </p>
                     <p>
-                        I also draw strength from the incredible women in my life and from my own resilience. Life hasn’t always been easy – there were times I wanted to give up. But I’ve learned to believe in myself and to lean on the support of those around me. I’m proud of how far I’ve come, and grateful for the people who’ve helped me get here.
+                        I also draw strength from the incredible women in my life and from my own resilience. Life hasn't always been easy – there were times I wanted to give up. But I've learned to believe in myself and to lean on the support of those around me. I'm proud of how far I've come, and grateful for the people who've helped me get here.
                     </p>
                     <p>
-                        Family is at the heart of everything I do. Even from afar, my connection to them grounds me. I’m one of triplets, and the bond I share with my siblings is something I carry with me always.
+                        Family is at the heart of everything I do. Even from afar, my connection to them grounds me. I'm one of triplets, and the bond I share with my siblings is something I carry with me always.
                     </p>
                     <p>
                         Whether on the field or through my artwork, everything I do comes from a place of love, strength, and purpose. Thanks for being part of my journey.
@@ -987,46 +1065,250 @@
                             <i class="fas fa-paint-brush"></i>
                         </div>
                         <h3>Art Workshops</h3>
-                        <p class="package-price">from $600</p>
+                        <p class="package-price">Classes from $600</p>
                         <ul class="package-features">
-                            <li>2 Days of Hands-on Training</li>
-                            <li>All Materials Included</li>
-                            <li>Certificate of Completion</li>
+                            <li>One 2-hour hands-on session</li>
+                            <li>All materials included</li>
+                            <li>Age-appropriate instruction</li>
+                            <li>Certificate of participation</li>
                         </ul>
-                        <p class="package-note">*Early bird registration discount available!</p>
-                        <a href="#contact" class="package-cta">Enroll Now</a>
+                        <p class="package-note">Perfect introduction to Aboriginal art techniques</p>
+                        <a href="#art-workshop-details" class="package-cta" onclick="showProgramDetails('art-workshop')">Find Out More</a>
                     </div>
 
                     <div class="program-card premium-card">
                         <div class="program-icon">
-                            <i class="fas fa-paint-brush"></i>
+                            <i class="fas fa-users"></i>
                         </div>
-                        <h3>Premium Art Workshop</h3>
-                        <p class="package-price">from $1200</p>
+                        <h3>Art and Culture Workshop</h3>
+                        <p class="package-price">Classes from $1200</p>
                         <ul class="package-features">
-                            <li>3 Days of In-depth Training</li>
-                            <li>All Premium Materials Included</li>
-                            <li>Personalized Feedback & Guidance</li>
-                            <li>Exclusive Access to Online Resources</li>
+                            <li>Three 2-hour sessions over one week</li>
+                            <li>Deep cultural immersion</li>
+                            <li>Storytelling and art combined</li>
+                            <li>All materials included</li>
+                            <li>Take-home resources</li>
                         </ul>
-                        <p class="package-note">*Limited spots available!</p>
-                        <a href="#contact" class="package-cta premium-cta">Enroll Now</a>
+                        <p class="package-note">Our most popular program!</p>
+                        <a href="#culture-workshop-details" class="package-cta premium-cta" onclick="showProgramDetails('culture-workshop')">Find Out More</a>
                     </div>
 
                     <div class="program-card">
                         <div class="program-icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3>Cultural Education</h3>
-                        <p class="package-price">from $1500</p>
+                        <h3>Art and Culture Workshop Advanced</h3>
+                        <p class="package-price">Classes from $1800</p>
                         <ul class="package-features">
-                            <li>1 Day Interactive Seminar</li>
-                            <li>Comprehensive Cultural Materials</li>
-                            <li>Networking Opportunities</li>
+                            <li>Three 2-hour sessions over a term</li>
+                            <li>Activities between classes</li>
+                            <li>Student-led projects</li>
+                            <li>Community showcase opportunity</li>
+                            <li>Ongoing support</li>
                         </ul>
-                        <p class="package-note">*Group discounts available!</p>
-                        <a href="#contact" class="package-cta">Register Now</a>
+                        <p class="package-note">Transform your school's cultural education</p>
+                        <a href="#advanced-workshop-details" class="package-cta" onclick="showProgramDetails('advanced-workshop')">Find Out More</a>
                     </div>
+                </div>
+
+                <!-- Program Details Sections -->
+                <div id="art-workshop-details" class="program-details">
+                    <h3>Art Workshops - Discover Aboriginal Art</h3>
+                    <div class="details-grid">
+                        <div class="detail-section">
+                            <h4>Program Overview</h4>
+                            <p>Our Art Workshop provides students with an authentic introduction to Aboriginal art techniques and symbolism. In this single 2-hour session, students will learn about the significance of art in Aboriginal culture while creating their own meaningful artwork.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4>What Students Will Learn</h4>
+                            <ul>
+                                <li>Traditional Aboriginal symbols and their meanings</li>
+                                <li>Dot painting techniques and their cultural significance</li>
+                                <li>The connection between art, land, and storytelling</li>
+                                <li>How to create their own artwork using traditional methods</li>
+                                <li>Respect for Indigenous artistic practices</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Curriculum Integration</h4>
+                            <ul>
+                                <li><strong>Visual Arts:</strong> Exploring cultural art practices, techniques, and symbolism</li>
+                                <li><strong>History:</strong> Understanding Aboriginal culture and perspectives</li>
+                                <li><strong>English:</strong> Visual storytelling and communication through symbols</li>
+                                <li><strong>Cross-curriculum priority:</strong> Aboriginal and Torres Strait Islander histories and cultures</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>What's Included</h4>
+                            <ul>
+                                <li>All art materials (paints, brushes, canvas boards)</li>
+                                <li>Printed resources about Aboriginal symbols</li>
+                                <li>Certificate of participation for each student</li>
+                                <li>Teacher resources for follow-up activities</li>
+                                <li>Photos of the workshop for school use</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Age Groups & Adaptations</h4>
+                            <ul>
+                                <li><strong>K-2:</strong> Simple symbols, large brushes, focus on basic shapes and colors</li>
+                                <li><strong>Years 3-4:</strong> More complex symbols, introduction to stories</li>
+                                <li><strong>Years 5-6:</strong> Detailed work, personal story development</li>
+                                <li><strong>High School:</strong> Advanced techniques, cultural discussions, contemporary connections</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Booking Information</h4>
+                            <ul>
+                                <li>Maximum 30 students per session</li>
+                                <li>Multiple sessions available in one day</li>
+                                <li>Flexible scheduling to suit your timetable</li>
+                                <li>Special rates for multiple bookings</li>
+                                <li>Regional travel may incur additional costs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="close-details" onclick="hideProgramDetails('art-workshop')">Close Details</button>
+                </div>
+
+                <div id="culture-workshop-details" class="program-details">
+                    <h3>Art and Culture Workshop - Journey of Understanding</h3>
+                    <div class="details-grid">
+                        <div class="detail-section">
+                            <h4>Program Overview</h4>
+                            <p>Our Art and Culture Workshop is a comprehensive three-session program delivered over one week. This immersive experience combines art creation with deep cultural learning, storytelling, and meaningful discussions about Aboriginal culture, history, and contemporary life.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Session Breakdown</h4>
+                            <ul>
+                                <li><strong>Session 1 - Cultural Foundation:</strong> Introduction to Aboriginal culture, Dreamtime stories, understanding Country and connection to land</li>
+                                <li><strong>Session 2 - Art as Language:</strong> Learning traditional symbols, creating personal stories through art, collaborative artwork begins</li>
+                                <li><strong>Session 3 - Contemporary Connections:</strong> Modern Aboriginal life, completing artworks, sharing and reflection</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Learning Outcomes</h4>
+                            <ul>
+                                <li>Deep understanding of Aboriginal culture and perspectives</li>
+                                <li>Ability to read and create stories using traditional symbols</li>
+                                <li>Appreciation for the diversity of Aboriginal cultures</li>
+                                <li>Understanding of contemporary Aboriginal life and issues</li>
+                                <li>Development of cultural sensitivity and respect</li>
+                                <li>Creation of meaningful personal and collaborative artworks</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Curriculum Integration</h4>
+                            <ul>
+                                <li><strong>History:</strong> Pre-contact Aboriginal life, colonization impacts, contemporary reconciliation</li>
+                                <li><strong>Geography:</strong> Connection to Country, land management, sacred sites</li>
+                                <li><strong>English:</strong> Oral storytelling traditions, visual literacy, communication</li>
+                                <li><strong>Visual Arts:</strong> Traditional and contemporary Aboriginal art practices</li>
+                                <li><strong>HASS:</strong> Cultural diversity, social justice, citizenship</li>
+                                <li><strong>Science:</strong> Traditional ecological knowledge, seasons, astronomy</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Interactive Elements</h4>
+                            <ul>
+                                <li>Interactive storytelling sessions</li>  
+                                <li>Hands-on art creation (individual and group projects)</li>
+                                <li>Traditional games and activities</li>
+                                <li>Language introduction (basic Barkindji words)</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Resources Provided</h4>
+                            <ul>
+                                <li>Comprehensive teacher pack with lesson extensions</li>
+                                <li>Recommended reading lists</li>
+                                <li>Assessment rubrics aligned with curriculum</li>
+                                <li>Parent information sheets</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Community Connections</h4>
+                            <ul>
+                                <li>Artwork can be displayed in school or community spaces</li>
+                                <li>Connection to local Aboriginal organizations</li>
+                                <li>Reconciliation Action Plan support</li>
+                                <li>NAIDOC Week and Reconciliation Week resources</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Special Considerations</h4>
+                            <ul>
+                                <li>Culturally sensitive content delivered age-appropriately</li>
+                                <li>Celebration of Aboriginal achievement and resilience</li>
+                                <li>Safe space for questions and discussions</li>
+                                <li>Differentiated for diverse learners</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="close-details" onclick="hideProgramDetails('culture-workshop')">Close Details</button>
+                </div>
+
+                <div id="advanced-workshop-details" class="program-details">
+                    <h3>Art and Culture Workshop Advanced - Term-Long Transformation</h3>
+                    <div class="details-grid">
+                        <div class="detail-section">
+                            <h4>Program Overview</h4>
+                            <p>Our Advanced Workshop is a transformative term-long program that deeply embeds Aboriginal perspectives into your school culture. With three 2-hour sessions spread across the term and activities between sessions, students develop profound understanding and become cultural ambassadors in their school community.</p>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Term Structure</h4>
+                            <ul>
+                                <li><strong>Beginning of Term:</strong> Foundation session - cultural immersion and project planning</li>
+                                <li><strong>Mid-Term:</strong> Development session - skill building and project progress</li>
+                                <li><strong>End of Term:</strong> Celebration session - showcase and community sharing</li>
+                                <li><strong>Between Sessions:</strong> Student-led activities, research projects, art creation</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Student Projects</h4>
+                            <ul>
+                                <li>Large-scale collaborative mural for permanent display</li>
+                                <li>Individual art portfolios documenting learning journey</li>
+                                <li>Digital storytelling projects combining art and technology</li>
+                                <li>Cultural presentation for school assembly or parents</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Between-Session Activities</h4>
+                            <ul>
+                                <li>Research tasks on local Aboriginal history</li>
+                                <li>Art technique practice with provided materials</li>
+                                <li>Reflection journals and documentation</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Advanced Learning Outcomes</h4>
+                            <ul>
+                                <li>Leadership in cultural awareness and reconciliation</li>
+                                <li>Public speaking and presentation skills</li>
+                                <li>Critical thinking about social justice issues</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Whole-School Impact</h4>
+                            <ul>
+                                <li>Permanent artwork enhances school environment</li>
+                                <li>Cultural protocols improve school practices</li>
+                                <li>Parent and community engagement increases</li>
+                                <li>Foundation for ongoing reconciliation initiatives</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Legacy Building</h4>
+                            <ul>
+                                <li>Sustainable cultural education model</li>
+                                <li>Teacher capacity building for future delivery</li>
+                                <li>Resource library for continued learning</li>
+                                <li>Template for annual cultural programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="close-details" onclick="hideProgramDetails('advanced-workshop')">Close Details</button>
                 </div>
             </div>
         </section>
@@ -1068,7 +1350,7 @@
                         <div class="visit-details">
                             <div class="detail-item">
                                 <i class="fas fa-clock"></i>
-                                <span><strong>Duration:</strong> Half-day or full-day programs available</span>
+                                <span><strong>Duration:</strong> Single session, weekly, or term programs</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-users"></i>
@@ -1076,7 +1358,7 @@
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span><strong>Service Area:</strong> [Your Region and Surrounding Areas]</span>
+                                <span><strong>Service Area:</strong> Adelaide and surrounding regions</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-book"></i>
@@ -1237,6 +1519,30 @@ document.querySelectorAll('.barkindji-word').forEach(function(word) {
         }
     });
 });
-</script>
-</body>
-</html>
+
+function showProgramDetails(program) {
+    // Hide all program details first
+    document.querySelectorAll('.program-details').forEach(function(detail) {
+        detail.classList.remove('active');
+    });
+    
+    // Show the selected program details
+    const detailsId = program + '-details';
+    const detailsElement = document.getElementById(detailsId);
+    if (detailsElement) {
+        detailsElement.classList.add('active');
+        // Scroll to the details section
+        detailsElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+function hideProgramDetails(program) {
+    const detailsId = program + '-details';
+    const detailsElement = document.getElementById(detailsId);
+    if (detailsElement) {
+        detailsElement.classList.remove('active');
+        // Scroll back to programs section
+        document.getElementById('programs').scrollIntoView({ behavior: 'smooth' });
+    }
+}
+    </script>
