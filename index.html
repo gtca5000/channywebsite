@@ -1726,6 +1726,35 @@
     </footer>
 
     <script>
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+
+    // Toggle menu when hamburger is clicked
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+});
+
 document.querySelectorAll('.barkindji-word').forEach(function(word) {
     word.addEventListener('click', function(e) {
         document.querySelectorAll('.barkindji-word.show-tooltip').forEach(function(w) {
