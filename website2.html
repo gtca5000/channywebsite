@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Channi Mitchell - Aboriginal Art & Cultural Education</title>
+    <title>Channy Mitchell - Aboriginal Art & Cultural Education</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -201,6 +201,105 @@
             line-height: 1.6;
             max-width: 800px;
         }
+
+            /* Credibility Banner Styles - Add to your CSS */
+.credibility-banner {
+    background: rgba(26, 26, 26, 0.95);
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 0.8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.credibility-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.credibility-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.credibility-item i {
+    color: #ffd700;
+    font-size: 1rem;
+}
+
+.credibility-separator {
+    color: #ffd700;
+    opacity: 0.6;
+    font-size: 1.2rem;
+}
+
+/* Subtle animation */
+@keyframes subtle-pulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .credibility-banner {
+        padding: 1rem 0;
+    }
+    
+    .credibility-content {
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .credibility-item {
+        font-size: 0.8rem;
+    }
+    
+    .credibility-separator {
+        display: none; /* Hide separators on mobile for cleaner look */
+    }
+    
+    .credibility-item span {
+        display: none; /* Show only icons on very small screens */
+    }
+    
+    .credibility-item i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .credibility-item span {
+        display: inline; /* Show text again but in vertical layout */
+    }
+    
+    .credibility-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Alternative: Scrolling ticker version (optional) */
+.credibility-banner.ticker .credibility-content {
+    animation: scroll-left 20s linear infinite;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
 
         .button-group {
             display: flex;
@@ -984,7 +1083,7 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Channi Mitchell</div>
+            <div class="logo">Channy Mitchell</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#programs">Programs</a></li>
@@ -1004,7 +1103,7 @@
                     <h1>Empowering Aboriginal Art & Cultural Education</h1>
                     <p>
                         Join us in celebrating and preserving the rich heritage of Aboriginal culture through art, education, and community engagement.<br>
-                        <span class="barkindji-word" data-meaning="river">Baaka</span> and <span class="barkindji-word" data-meaning="family">ngatji</span> are at the heart of our work.
+                        <span class="barkindji-word" data-meaning="family">Ngatji</span> is at the heart of our work.
                     </p>
                     <div class="button-group">
                         <a href="#programs" class="btn btn-primary">Explore Programs</a>
@@ -1014,13 +1113,45 @@
             </div>
         </section>
 
+        <!-- Credibility Banner - Add this where the red squiggle line is -->
+    <section class="credibility-banner">
+    <div class="container">
+        <div class="credibility-content">
+            <div class="credibility-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Working With Children Check (WWCC)</span>
+            </div>
+            <div class="credibility-separator">•</div>
+            <div class="credibility-item">
+                <i class="fas fa-certificate"></i>
+                <span>Cert IV in Sport & Recreation</span>
+            </div>
+            <div class="credibility-separator">•</div>
+            <div class="credibility-item">
+                <i class="fas fa-school"></i>
+                <span>50+ Schools</span>
+            </div>
+            <div class="credibility-separator">•</div>
+            <div class="credibility-item">
+                <i class="fas fa-users"></i>
+                <span>2,000+ Students Inspired</span>
+            </div>
+            <div class="credibility-separator">•</div>
+            <div class="credibility-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Adelaide & Regional SA</span>
+            </div>
+        </div>
+    </div>
+    </section>
+
         <section class="about" id="about">
             <div class="container about-flex">
                 <div class="about-image-circle">
                     <img src="assets/logo.png" alt="Channy Mitchell Aboriginal Art" />
                 </div>
                 <div class="about-main-text">
-                    <h2 class="section-title orange">Meet Channi</h2>
+                    <h2 class="section-title orange">Meet Channy</h2>
                     <p>
                         Hi, I'm Channy Mitchell, a <strong>Barkindji woman</strong> who expresses my culture through art.
                     </p>
@@ -1318,7 +1449,7 @@
                 <h2 class="section-title" style="color: #fff;">What Educators Say</h2>
                 <div class="testimonial-cards">
                     <div class="testimonial-card glass">
-                        <p>"Channi at West Beach Primary School has been an amazing communicator with parents and the kids."</p>
+                        <p>"Channy at West Beach Primary School has been an amazing communicator with parents and the kids."</p>
                         <h4>Parent feedback</h4>
                     </div>
                     <div class="testimonial-card glass">
@@ -1331,7 +1462,7 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="assets/channy.png" alt="Channy Mitchell Aboriginal Art" />
+                    <img src="assets/Channy.png" alt="Channy Mitchell Aboriginal Art" />
                 </div>
             </div>
         </section>
@@ -1371,7 +1502,7 @@
                         <div class="contact-details">
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <span><strong>Email:</strong> channy_mitchell@outlook.com </span>
+                                <span><strong>Email:</strong> Channy_mitchell@outlook.com </span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
@@ -1379,7 +1510,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-instagram"></i>
-                                <span><strong>Instagram:</strong> @channymitchellart</span>
+                                <span><strong>Instagram:</strong> @Channymitchellart</span>
                             </div>
                         </div>
                     </div>
@@ -1450,9 +1581,9 @@
                 <div class="contact-flex">
                     <div class="contact-info-card">
                         <h3>Contact Details</h3>
-                        <div class="contact-detail"><i class="fas fa-envelope"></i> <span>channy_mitchell@outlook.com</span></div>
+                        <div class="contact-detail"><i class="fas fa-envelope"></i> <span>Channy_mitchell@outlook.com</span></div>
                         <div class="contact-detail"><i class="fas fa-phone"></i> <span>0466 684 448</span></div>
-                        <div class="contact-detail"><i class="fab fa-instagram"></i> <span>@channymitchellart</span></div>
+                        <div class="contact-detail"><i class="fab fa-instagram"></i> <span>@Channymitchellart</span></div>
                         <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span>Adelaide, Kaurna Country</span></div>
                     </div>
                     <form action="#" method="POST" class="contact-form glass">
@@ -1492,10 +1623,10 @@
             <div style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
                 <img src="assets/aboriginal_flag.png" alt="Aboriginal Flag" style="height: 32px; width: auto; margin-bottom: 0.3rem;">
                 <span style="font-size: 1rem; color: #ffd700; opacity: 0.95;">
-                    Channi Mitchell acknowledges the Kaurna people as the Traditional Custodians of the land on which we work and create.
+                    Channy Mitchell acknowledges the Kaurna people as the Traditional Custodians of the land on which we work and create.
                 </span>
             </div>
-            <p style="margin-top: 1.2rem;">&copy; 2025 Channi Mitchell - Aboriginal Art & Cultural Education. All rights reserved.</p>
+            <p style="margin-top: 1.2rem;">&copy; 2025 Channy Mitchell - Aboriginal Art & Cultural Education. All rights reserved.</p>
         </div>
     </footer>
 
